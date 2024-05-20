@@ -1,7 +1,16 @@
 on_actions = {
-    on_game_start = {
-        events = {
-            snap.1
+    on_startup = {
+        effect = {
+            every_country = {
+                limit = {
+                    is_ai = no
+                }
+                country_event = snap.1
+                news_event = {
+                    id = snap.4
+                    days = 18
+                }
+            }
         }
     }
 }

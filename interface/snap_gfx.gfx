@@ -1,0 +1,6 @@
+spriteTypes = {
+spriteType = {
+name = "GFX_snap_event"
+texturefile = "gfx/event_pictures/snap_event.dds"
+}
+}

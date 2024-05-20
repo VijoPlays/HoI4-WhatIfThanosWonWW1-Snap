@@ -2,10 +2,10 @@
 
 This mod brings balance to HoI4, by snapping half of all countries at the start of the game.
 
-This works with any mod that uses the standard map - mods like Equestria at War will need additional work from you. For example, if you want to make the mod work with Equestria at War, you'd have to add the "REB"-tag to a province - similar to what I did to the Pitcairn Islands under history/states. This tag requires a single province so that they can annex states, sadly.
+This should work with ANY mod and will snap half of all countries over the first 2 weeks of the game away.
+
+![Snap](thumbnail.png)
 
 **Not Ironman compatible**.
 
-//TODO: Image
-
-//TODO Link to repo
+//TODO Link to repo in Steam + URL to steam in GH

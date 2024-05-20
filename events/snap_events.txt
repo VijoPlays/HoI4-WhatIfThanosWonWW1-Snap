@@ -4,7 +4,7 @@ country_event = {
     id = snap.1
     title = snap.1.t
     desc = snap.1.d
-    picture = GFX_report_event_generic
+    picture = GFX_snap_event
 
     trigger = {
         NOT = { 
@@ -15,12 +15,14 @@ country_event = {
     immediate = {
         set_global_flag = THANOS_SNAP_OCCURRED     
         every_country = {
-            country_event = { id = snap.2 }
+            country_event = { 
+                id = snap.2 
+            }
         }
     }
 
     option = {
-        name = "OK"
+        name = snap.1.a
         ai_chance = {
             factor = 0
         }
@@ -31,19 +33,24 @@ country_event = {
     id = snap.2
     title = snap.2.t
     desc = snap.2.d
-    picture = GFX_report_event_generic
+    picture = GFX_snap_event
 
     is_triggered_only = yes
 
     immediate = {
         random_list = {
-            50 = { country_event = { id = snap.3 } }
+            50 = { country_event = { 
+                id = snap.3
+                days = 1
+                random_days = 13
+                } 
+            }
             50 = { }
         }
     }
 
     option = {
-        name = "OK"
+        name = snap.2.a
         ai_chance = {
             factor = 0
         }
@@ -54,7 +61,7 @@ country_event = {
     id = snap.3
     title = snap.3.t
     desc = snap.3.d
-    picture = GFX_report_event_generic
+    picture = GFX_snap_event
 
     is_triggered_only = yes
 
@@ -68,7 +75,24 @@ country_event = {
     }
 
     option = {
-        name = "I didn't want to play anyway."
+        name = snap.3.a
+        ai_chance = {
+            factor = 0
+        }
+    }
+}
+
+# It's over
+country_event = {
+    id = snap.4
+    title = snap.4.t
+    desc = snap.4.d
+    picture = GFX_snap_event
+
+    is_triggered_only = yes
+
+    option = {
+        name = snap.4.a
         ai_chance = {
             factor = 0
         }
