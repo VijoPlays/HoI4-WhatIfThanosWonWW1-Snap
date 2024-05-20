@@ -1,0 +1,76 @@
+add_namespace = snap
+
+country_event = {
+    id = snap.1
+    title = snap.1.t
+    desc = snap.1.d
+    picture = GFX_report_event_generic
+
+    trigger = {
+        NOT = { 
+            has_global_flag = THANOS_SNAP_OCCURRED
+        }
+    }
+
+    immediate = {
+        set_global_flag = THANOS_SNAP_OCCURRED     
+        every_country = {
+            country_event = { id = snap.2 }
+        }
+    }
+
+    option = {
+        name = "OK"
+        ai_chance = {
+            factor = 0
+        }
+    }
+}
+
+country_event = {
+    id = snap.2
+    title = snap.2.t
+    desc = snap.2.d
+    picture = GFX_report_event_generic
+
+    is_triggered_only = yes
+
+    immediate = {
+        random_list = {
+            50 = { country_event = { id = snap.3 } }
+            50 = { }
+        }
+    }
+
+    option = {
+        name = "OK"
+        ai_chance = {
+            factor = 0
+        }
+    }
+}
+
+country_event = {
+    id = snap.3
+    title = snap.3.t
+    desc = snap.3.d
+    picture = GFX_report_event_generic
+
+    is_triggered_only = yes
+
+    immediate = {
+        REB = {
+            annex_country = { 
+                target = PREV 
+                transfer_troops = no 
+            }
+        }
+    }
+
+    option = {
+        name = "I didn't want to play anyway."
+        ai_chance = {
+            factor = 0
+        }
+    }
+}

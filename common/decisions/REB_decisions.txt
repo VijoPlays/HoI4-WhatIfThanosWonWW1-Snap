@@ -1,0 +1,37 @@
+
+CR_make_peace_please = {
+	please_dont_interfere_with_the_timeline = {
+		priority = 9001
+
+		icon = GFX_decision_generic_form_nation
+
+		ai_will_do = {
+			base = 10
+		}
+
+		available = {
+			tag = REB
+			OR = {
+				has_war = yes
+				is_in_faction = yes
+				is_subject = yes
+				num_subjects > 0
+			}	
+		}
+
+		days_re_enable = 1
+
+		complete_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						has_war_with = ROOT
+						is_subject_of = ROOT
+					}	
+				}
+				white_peace = ROOT
+				end_puppet = ROOT
+			}
+		}
+	}	
+}

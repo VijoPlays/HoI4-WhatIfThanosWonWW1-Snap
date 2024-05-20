@@ -1,0 +1,28 @@
+ideas = {
+	country = {
+		rebel_spirit = {
+			allowed = {
+				always = yes
+			}
+			picture = no
+			modifier = {
+				monthly_population = -1
+				enemy_justify_war_goal_time = 999.0
+				min_export = -1
+				command_power_gain = -20.0
+				political_power_gain = -10
+				neutrality_drift = 1
+				conscription_factor = -99
+				join_faction_tension = 1000
+				ai_get_ally_desire_factor = -1000
+				ai_license_acceptance = -1000
+				industrial_capacity_dockyard = -100
+				industrial_capacity_factory = -100
+				industry_repair_factor = -100
+				industry_free_repair_factor = -100
+				training_time_factor = 1000
+				no_compliance_gain = 1
+			}
+		}
+	}
+}

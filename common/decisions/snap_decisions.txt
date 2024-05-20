@@ -1,0 +1,47 @@
+snap_category = {
+    snap_coring = {
+        icon = GFX_decision_generic
+        allowed = {
+            always = yes
+        }
+
+        priority = 420
+        state_target = yes
+		on_map_mode = map_only
+        
+        cost = 20
+		
+		available = {
+			FROM = {
+				AND = {
+                    OR = {
+                        is_coastal = yes
+                        any_neighbor_state = {
+                            is_fully_controlled_by = ROOT
+                        }
+                    }
+				}
+			}
+		}
+
+        visible = {
+            FROM = {
+                is_controlled_by = REB
+            }
+        }
+
+		remove_effect = {
+			FROM = {
+				add_core_of = ROOT
+			}
+			transfer_state = FROM
+		}
+
+        ai_will_do = {
+            factor = 1
+        }
+
+        days_remove = 30
+        selectable = yes
+    }
+}

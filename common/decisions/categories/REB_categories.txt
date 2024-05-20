@@ -1,0 +1,10 @@
+CR_make_peace_please = {
+
+	icon = generic_research
+	
+	picture = GFX_make_peace_please
+	
+	visible = {
+		tag = REB	
+	}
+}
