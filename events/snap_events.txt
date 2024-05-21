@@ -6,25 +6,20 @@ country_event = {
     desc = snap.1.d
     picture = GFX_snap_event
 
-    trigger = {
-        NOT = { 
-            has_global_flag = THANOS_SNAP_OCCURRED
-        }
-    }
-
-    immediate = {
-        set_global_flag = THANOS_SNAP_OCCURRED     
-        every_country = {
-            country_event = { 
-                id = snap.2 
-            }
-        }
-    }
+    fire_only_once = yes
 
     option = {
         name = snap.1.a
         ai_chance = {
             factor = 0
+        }
+        hidden_effect = {
+            every_country = {
+                country_event = { 
+                    id = snap.2 
+                    days = 1
+                }
+            }
         }
     }
 }
@@ -37,7 +32,11 @@ country_event = {
 
     is_triggered_only = yes
 
-    immediate = {
+    option = {
+        name = snap.2.a
+        ai_chance = {
+            factor = 0
+        }
         random_list = {
             50 = { country_event = { 
                 id = snap.3
@@ -46,13 +45,6 @@ country_event = {
                 } 
             }
             50 = { }
-        }
-    }
-
-    option = {
-        name = snap.2.a
-        ai_chance = {
-            factor = 0
         }
     }
 }
@@ -65,19 +57,16 @@ country_event = {
 
     is_triggered_only = yes
 
-    immediate = {
+    option = {
+        name = snap.3.a
+        ai_chance = {
+            factor = 0
+        }
         REB = {
             annex_country = { 
                 target = PREV 
                 transfer_troops = no 
             }
-        }
-    }
-
-    option = {
-        name = snap.3.a
-        ai_chance = {
-            factor = 0
         }
     }
 }
