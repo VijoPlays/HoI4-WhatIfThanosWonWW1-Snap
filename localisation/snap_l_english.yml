@@ -12,3 +12,5 @@
   snap.4.d: "It seems everything has quieted down. It is up to us to rebuild the Earth now."
   snap.4.a: "We should've listened to John Titor."
   snap_coring: "Claim state"
+  snap_coring_coastal: "Claim coastal state"
+  state_claimed_flag: "Someone claimed this state"

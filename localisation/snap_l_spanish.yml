@@ -12,3 +12,5 @@
   snap.4.d: "Parece que todo se ha calmado. Ahora nos toca a nosotros reconstruir la Tierra."
   snap.4.a: "Deberíamos haber escuchado a John Titor."
   snap_coring: "Reclamar Territorio"
+  snap_coring_coastal: "Reclamar Territorio Costero"
+  state_claimed_flag: "Alguien ha reclamado esta zona"

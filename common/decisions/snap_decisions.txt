@@ -13,15 +13,8 @@ snap_category = {
 		
 		available = {
 			FROM = {
-                OR = {
-                    AND = {
-                        is_coastal = yes
-                        ROOT = {
-                            any_owned_state = {
-                                is_coastal = yes
-                            }
-                        }
-                    }
+                AND = {
+                    NOT = { has_state_flag = state_claimed_flag }
                     any_neighbor_state = {
                         is_fully_controlled_by = ROOT
                     }
@@ -33,28 +26,20 @@ snap_category = {
             FROM = {
                 AND = {
                     is_controlled_by = REB
-                    OR = {
-                        AND = {
-                            is_coastal = yes
-                            ROOT = {
-                                any_owned_state = {
-                                    is_coastal = yes
-                                }
-                            }
-                        }
-                        any_neighbor_state = {
-                            is_fully_controlled_by = ROOT
-                        }
+                    any_neighbor_state = {
+                        is_fully_controlled_by = ROOT
                     }
                 }
             }
         }
 
-        highlight_states = {
-			highlight_color_while_active = 1
-		}
+        complete_effect = {
+            FROM = {
+                set_state_flag = state_claimed_flag
+            }
+        }
 
-		remove_effect = {
+        remove_effect = {
 			FROM = {
 				add_core_of = ROOT
 			}
@@ -62,10 +47,78 @@ snap_category = {
 		}
 
         ai_will_do = {
-            factor = 1
+            factor = 2
         }
 
         days_remove = 30
+        selectable = yes
+    }
+    
+    snap_coring_coastal = {
+        icon = infiltrate_state
+        allowed = {
+            always = yes
+        }
+
+        priority = 420
+        state_target = yes
+        on_map_mode = map_only
+        
+        cost = 30
+        
+        available = {
+            FROM = {
+                AND = {
+                    NOT = { has_state_flag = state_claimed_flag }
+                    is_coastal = yes
+                    ROOT = {
+                        any_owned_state = {
+                            is_coastal = yes
+                        }
+                    }
+                }
+            }
+        }
+
+        visible = {
+            FROM = {
+                AND = {
+                    is_controlled_by = REB
+                    AND = {
+                        is_coastal = yes
+                        ROOT = {
+                            any_owned_state = {
+                                is_coastal = yes
+                            }
+                        }
+                        NOT = {
+                            any_neighbor_state = {
+                                is_fully_controlled_by = ROOT
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        complete_effect = {
+            FROM = {
+                set_state_flag = state_claimed_flag
+            }
+        }
+
+        remove_effect = {
+            FROM = {
+                add_core_of = ROOT
+            }
+            transfer_state = FROM
+        }
+
+        ai_will_do = {
+            factor = 1
+        }
+
+        days_remove = 40
         selectable = yes
     }
 }
