@@ -1,6 +1,5 @@
 snap_category = {
     snap_coring = {
-        name = snap.d.core
 		icon = infiltrate_state
 		allowed = {
             always = yes
