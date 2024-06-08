@@ -7,5 +7,3 @@ This should work with ANY mod and will snap half of all countries over the first
 ![Snap](thumbnail.png)
 
 **Not Ironman compatible**.
-
-//TODO Link to repo in Steam + URL to steam in GH
